@@ -1,0 +1,15 @@
+body {
+    background-image: url(../img/cani_gatti.avif);
+    background-size: cover;
+}
+
+.contenitore {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.nav_bar {
+    height: 4rem;
+    width: 100%;
+    background-color: white;
+}
