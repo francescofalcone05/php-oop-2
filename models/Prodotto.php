@@ -27,6 +27,6 @@ class Prodotto
 
     public function getPrice()
     {
-        return '€' . $this->prezzo;
+        return '€' . ' ' . $this->prezzo;
     }
 }

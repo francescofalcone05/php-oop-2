@@ -15,11 +15,10 @@ body {
 }
 
 .my_card {
-    width: calc(100% / 5 - 1rem);
+    width: calc(100% / 4 - 1rem);
     margin: 0.5rem 0.5rem;
     min-height: 25rem;
     background-color: white;
-
 }
 
 .my_card>div img {

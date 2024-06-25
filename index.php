@@ -27,21 +27,21 @@ include __DIR__ . "/store.php";
     </header>
 
     <main>
-        <div class="contenitore text-center">
-            <h2 class="text-success my-2">Prodotti per la casa</h2>
+        <div class="contenitore ">
+            <h2 class="text-success my-2 text-center">Prodotti per la casa</h2>
             <div class="d-flex">
 
                 <?php foreach ($prodottiCasa as $prodotto) { ?>
                     <div class="my_card p-2 d-flex flex-column justify-content-between">
                         <div>
-                            <img src="<?= $prodotto->prodotto->immagine ?>" alt="">
+                            <img src="<?= $prodotto->immagine ?>" alt="">
                         </div>
                         <div class="descrizione">
-                            <h4><?= $prodotto->prodotto->nome ?></h4>
+                            <h4><?= $prodotto->nome ?></h4>
                             <p class="mb-0">Size: <?= ' ' . $prodotto->dimensioni . 'cm' ?></p>
                             <div class="d-flex justify-content-between">
-                                <span>Prezzo:<?= " " . $prodotto->prodotto->getPrice() ?></span>
-                                <div class="cont_img"><img src="<?= $prodotto->prodotto->categoria->getIcone() ?>" alt=""></div>
+                                <span>Prezzo:<?= " " . $prodotto->getPrice() ?></span>
+                                <div class="cont_img"><img src="<?= $prodotto->categoria->getIcone() ?>" alt=""></div>
                             </div>
                         </div>
                     </div>
@@ -49,7 +49,7 @@ include __DIR__ . "/store.php";
 
             </div>
 
-            <h2 class="text-success my-2">Prodotti alimentari</h2>
+            <h2 class="text-success my-2 text-center">Prodotti alimentari</h2>
             <div class="d-flex">
 
                 <?php foreach ($prodottiAlimentari as $prodotto) { ?>
@@ -70,26 +70,53 @@ include __DIR__ . "/store.php";
 
             </div>
 
-            <h2 class="text-success my-2">Giochi per i tuoi Animali</h2>
+            <h2 class="text-success my-2 text-center">Giochi per i tuoi Animali</h2>
             <div class="d-flex">
 
                 <?php foreach ($giochi as $prodotto) { ?>
                     <div class="my_card p-2 d-flex flex-column justify-content-between">
                         <div>
-                            <img src="<?= $prodotto->prodotto->immagine ?>" alt="">
+                            <img src="<?= $prodotto->immagine ?>" alt="">
                         </div>
                         <div class="descrizione">
-                            <h4><?= $prodotto->prodotto->nome ?></h4>
+                            <h4><?= $prodotto->nome ?></h4>
                             <p class="mb-0">Materiale:<?= ' ' . $prodotto->materiale ?></p>
                             <div class="d-flex justify-content-between">
-                                <span>Prezzo:<?= " " . $prodotto->prodotto->getPrice() ?></span>
-                                <div class="cont_img"><img src="<?= $prodotto->prodotto->categoria->getIcone() ?>" alt=""></div>
+                                <span>Prezzo:<?= " " . $prodotto->getPrice() ?></span>
+                                <div class="cont_img"><img src="<?= $prodotto->categoria->getIcone() ?>" alt=""></div>
                             </div>
                         </div>
                     </div>
                 <?php } ?>
 
             </div>
+        </div>
+
+        <h2 class="text-success my-2 text-center">Tutti i prodotti</h2>
+        <div class="d-flex flex-wrap">
+
+            <?php foreach ($prodotti as $prodotto) { ?>
+                <div class="my_card p-2 d-flex flex-column justify-content-between">
+                    <div>
+                        <img src="<?= $prodotto->immagine ?>" alt="">
+                    </div>
+                    <div class="descrizione">
+                        <h4><?= $prodotto->nome ?></h4>
+                        <?php if (get_class($prodotto) == 'Cibo') { ?>
+                            <p class="mb-0"><b>Peso:</b><?= $prodotto->getKg() ?></p>
+                        <?php } elseif (get_class($prodotto) == 'Casa') { ?>
+                            <p class="mb-0"><b>Size:</b> <?= ' ' . $prodotto->dimensioni . 'cm' ?></p>
+                        <?php } elseif (get_class($prodotto) == 'Gioco') { ?>
+                            <p class="mb-0"><b>Materiale:</b><?= ' ' . $prodotto->materiale ?></p>
+                        <?php } ?>
+                        <div class="d-flex justify-content-between">
+                            <span><b>Prezzo:</b><?= " " . $prodotto->getPrice() ?></span>
+                            <div class="cont_img"><img src="<?= $prodotto->categoria->getIcone() ?>" alt=""></div>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
+
         </div>
 
     </main>

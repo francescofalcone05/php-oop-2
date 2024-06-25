@@ -1,13 +1,17 @@
 <?php
 
-class Gioco
+class Gioco extends Prodotto
 {
     public $materiale;
-    public $prodotto;
 
-    public function __construct($materiale, Prodotto $prodotto)
+
+    public function __construct($materiale, $nome, $prezzo, $immagine, Categoria $categoria)
     {
         $this->materiale = $materiale;
-        $this->prodotto = $prodotto;
+
+        $this->nome = $nome;
+        $this->prezzo = $prezzo;
+        $this->immagine = $immagine;
+        $this->categoria = $categoria;
     }
 }

@@ -1,15 +1,18 @@
 <?php
 
 
-class Casa
+class Casa extends Prodotto
 {
-    public $prodotto;
     public $dimensioni;
 
 
-    public function __construct(Prodotto $prodotto, $dimensioni)
+    public function __construct($nome, $prezzo, $immagine, Categoria $categoria, $dimensioni)
     {
-        $this->prodotto = $prodotto;
+        $this->nome = $nome;
+        $this->prezzo = $prezzo;
+        $this->immagine = $immagine;
+        $this->categoria = $categoria;
+
         $this->dimensioni = $dimensioni;
     }
 }
