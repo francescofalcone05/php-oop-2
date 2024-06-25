@@ -1,14 +1,18 @@
 <?php
 
-class Cibo
+class Cibo extends Prodotto
 {
     public $peso;
-    public $prodotto;
 
-    public function __construct($peso, Prodotto $prodotto)
+
+    public function __construct($peso, $nome, $prezzo, $immagine, Categoria $categoria)
     {
         $this->peso = $peso;
-        $this->prodotto = $prodotto;
+
+        $this->nome = $nome;
+        $this->prezzo = $prezzo;
+        $this->immagine = $immagine;
+        $this->categoria = $categoria;
     }
 
     public function getKg()

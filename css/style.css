@@ -1,6 +1,6 @@
 body {
     background-image: url(../img/cani_gatti.avif);
-    background-size: cover;
+    background-size: contain;
 }
 
 .contenitore {
@@ -16,16 +16,14 @@ body {
 
 .my_card {
     width: calc(100% / 5 - 1rem);
-    margin: 0 0.5rem;
-    min-height: 10rem;
-}
-
-.my_card>img {
-    width: 100%;
-}
-
-.descrizione {
+    margin: 0.5rem 0.5rem;
+    min-height: 25rem;
     background-color: white;
+
+}
+
+.my_card>div img {
+    width: 90%;
 }
 
 .cont_img {
