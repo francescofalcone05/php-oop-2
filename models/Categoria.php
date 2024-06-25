@@ -1,16 +1,15 @@
 <?php
 
+
+
 class Categoria
 {
     public $animale;
     public $iconaCategoria;
-    public $categoria;
 
-    public function __construct($animale, $iconaCategoria, $categoria)
+    public function __construct($animale)
     {
         $this->animale = $animale;
-        $this->iconaCategoria = $iconaCategoria;
-        $this->categoria = $categoria;
     }
 
     public function getIcone()
@@ -18,9 +17,11 @@ class Categoria
         if ($this->animale == 'cane') {
 
             $this->iconaCategoria = "./img/icona-cane.jpeg";
+            return $this->iconaCategoria;
         } else {
 
             $this->iconaCategoria = "./img/icona-gatto.webp";
+            return $this->iconaCategoria;
         };
     }
 }

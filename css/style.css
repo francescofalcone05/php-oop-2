@@ -13,3 +13,25 @@ body {
     width: 100%;
     background-color: white;
 }
+
+.my_card {
+    width: calc(100% / 5 - 1rem);
+    margin: 0 0.5rem;
+    min-height: 10rem;
+}
+
+.my_card>img {
+    width: 100%;
+}
+
+.descrizione {
+    background-color: white;
+}
+
+.cont_img {
+    height: 3rem;
+}
+
+.cont_img>img {
+    height: 100%;
+}

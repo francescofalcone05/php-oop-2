@@ -1,5 +1,6 @@
 <?php
 
+
 class Casa
 {
     public $prodotto;
@@ -15,11 +16,11 @@ class Casa
 
     public function getLarghezza()
     {
-        return 'cm' . $this->larghezza;
+        return $this->larghezza . 'cm';
     }
 
     public function getLunghezza()
     {
-        return 'cm' . $this->lunghezza;
+        return $this->lunghezza . 'cm';
     }
 }
